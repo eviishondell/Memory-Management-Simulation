@@ -129,13 +129,12 @@ void list_add_ascending_by_address(list_t *l, block_t *blk){
         l->head = newNode;
       }
       else {
-        //printf("silly check right\n");
+
         while(current != NULL && newblk_start_address >= curblk_start_address) {
           prev = current;
           current = current->next;
                
           if(current != NULL){  // the last one in the list
-            // printf("seeing if this triggers\n");
              curblk_start_address = current->blk->start;
           }
           }
